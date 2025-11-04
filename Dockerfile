@@ -1,12 +1,12 @@
-# Etapa 1: Build da aplicação com Maven e OpenJDK 19
-FROM maven:3.9.6-openjdk-19 AS build
+# Etapa 1: Build da aplicação com Maven e Java 17
+FROM maven:3.9.6-eclipse-temurin-17 AS build
 WORKDIR /app
 COPY pom.xml .
 COPY src ./src
 RUN mvn clean package -DskipTests
 
-# Etapa 2: Imagem final leve com JDK 19
-FROM openjdk:19-jdk-slim
+# Etapa 2: Imagem final leve com Java 17
+FROM eclipse-temurin:17-jre
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 
