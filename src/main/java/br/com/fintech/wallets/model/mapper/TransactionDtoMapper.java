@@ -12,6 +12,10 @@ public interface TransactionDtoMapper {
     @Mapping(target = "transactionId", ignore = true)
     Transaction toDomain(TransactionRequest request);
 
-    @Mapping(target = "walletId", source = "walletId")
+    @Mapping(
+            target = "type",
+            expression = "java(domain.getType() == null ? null : " +
+                    "(domain.getType().name().equals(\"BUDGET\") ? \"receita\" : \"despesa\"))"
+    )
     TransactionResponse toResponse(Transaction domain);
 }

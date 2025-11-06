@@ -10,7 +10,7 @@ public class TransactionResponse {
     private Long transactionId;
     private Long walletId;
     private String description;
-    private TargetType type;
+    private String type;
     private Double value;
     private LocalDateTime transactionAt;
     private LocalDateTime createdAt;

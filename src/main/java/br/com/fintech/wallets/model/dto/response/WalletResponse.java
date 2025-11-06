@@ -11,7 +11,7 @@ public class WalletResponse {
     private Long walletId;
     private Long accountId;
     private String name;
-    private TargetType type;
+    private String type;
     private Double financialTarget;
     private LocalDate startDate;
     private LocalDate endDate;
