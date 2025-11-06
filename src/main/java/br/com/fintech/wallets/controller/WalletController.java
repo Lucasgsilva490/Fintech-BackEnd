@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/wallets")
+@RequestMapping("/api/wallets")
 public class WalletController {
 
     private final WalletService service;
